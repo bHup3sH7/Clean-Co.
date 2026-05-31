@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TASK-20</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "C8p546hEgc8i0R871",
+        });
+      })();
+    </script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- NAVIGATION BAR -->
+    <nav>
+      <div class="logo">
+        <a href="#home">
+          <b>Clean <span>Co.</span></b></a
+        >
+      </div>
+      <div class="nav-bar">
+        <ul>
+          <li><a href="#home">HOME</a></li>
+          <li><a href="#services">SERVICES</a></li>
+          <li><a href="#about">ABOUT US</a></li>
+          <li><a href="#contact">CONTACT US</a></li>
+        </ul>
+      </div>
+      <div class="username">👨🏻‍✈️ Bhupesh Singh</div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home">
+      <div class="hero">
+        <div class="hero-left">
+          <h1>
+            Clean Clothes,<br />
+            <span>Happy Life.</span>
+          </h1>
+          <p>
+            Professional laundry and dry-cleaning at your doorstep. Fast,
+            affordable, and reliable — every time.
+          </p>
+          <button class="book-btn" id="BookBtn">📅 Book A Service Today</button>
+        </div>
+        <div class="hero-right">
+          <img src="images/wash-machine.jpg" />
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICE OVERVIEW SECTION -->
+    <section>
+      <div class="stats">
+        <h1>Our Achievements:</h1>
+        <div class="stat">
+          <h2>15+</h2>
+          <p>Laundry Services</p>
+        </div>
+        <div class="stat">
+          <h2>240+</h2>
+          <p>Happy Customers</p>
+        </div>
+        <div class="stat">
+          <h2>2+</h2>
+          <p>Years Of Experiences</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING SERVICE SECTION -->
+    <section id="services">
+      <div class="section-label">Book A Service</div>
+      <h2 class="section-title">Our Services</h2>
+      <p class="sub-section">
+        Pick what you need, fill your details, and we'll handle the rest.
+      </p>
+      <div class="layout">
+        <!-- LEFT: SERVICES -->
+        <div class="layout-left">
+          <div id="serviceList"></div>
+          <p class="hint">Use "Add" to add items to your cart</p>
+        </div>
+        <!-- RIGHT: CART + FORM -->
+        <div class="layout-right">
+          <div class="cart-box">
+            <h3>🛒 Your Cart</h3>
+            <div class="cartEmpty" id="cartEmpty">No Items added yet.</div>
+            <div id="cartItems"></div>
+            <div class="cart-total">
+              <span>Total</span>
+              <strong>$<span id="totalAmt">0</span></strong>
+            </div>
+          </div>
+          <div class="form-box">
+            <h3>Book Now</h3>
+            <label for="name">Full Name</label>
+            <input type="text" id="fName" placeholder="your Full Name" />
+            <label for="mail">Email</label>
+            <input type="email" id="fEmail" placeholder="your Email" />
+            <label for="phone">Phone Number</label>
+            <input type="number" id="fPhone" placeholder="Your Phone Number" />
+            <button class="submit-btn" onclick="bookNow()">Book Now</button>
+            <div class="successMsg" id="successMsg">
+              Thank You for Booking the Services - We will get back to you soon!
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUALITY -->
+    <section id="about">
+      <div class="section-label">Why Us</div>
+      <h2 class="section-title">What Makes Us Different</h2>
+      <p class="sub-section">
+        We're committed to quality, speed, and your satisfaction.
+      </p>
+      <div class="qualityGrid">
+        <div class="qCard">
+          <div class="icon">✨</div>
+          <h4>Premium Services</h4>
+          <p>Best detergents and techniques for spotless results.</p>
+        </div>
+        <div class="qCard">
+          <div class="icon">💬</div>
+          <h4>Quick Support</h4>
+          <p>We're here 24/7 to answer your questions.</p>
+        </div>
+        <div class="qCard">
+          <div class="icon">🚚</div>
+          <h4>Timely Delivery</h4>
+          <p>Picked up and delivered exactly on time.</p>
+        </div>
+        <div class="qCard">
+          <div class="icon">💰</div>
+          <h4>Affordable Prices</h4>
+          <p>Great quality with transparent, fair pricing.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+      <h2>Stay in LOOP</h2>
+      <p>Subscribe for Deals and updates.</p>
+      <div class="newsForm">
+        <input type="text" placeholder="Full Name" />
+        <input type="email" placeholder="Email Address" />
+        <button class="newsSubForm" onclick="this.textContent = '✔ Done!'">
+          Subscribe
+        </button>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+      <div class="footerGrid">
+        <div class="footerBrand">
+          <a class="logo" href="#home">Clean <span>Co.</span></a>
+          <p>
+            Professional Laundry at your doorstep. Clean Clothes, Happy Lives
+          </p>
+          <div class="socials">
+            <a href="#" class="social"
+              ><img
+                src="images/facebook.png"
+                style="width: 32px; height: 32px" /></a
+            ><a href="#" class="social"
+              ><img
+                src="images/instagram.png"
+                style="width: 32px; height: 32px" /></a
+            ><a href="#" class="social"
+              ><img
+                src="images/twitter.png"
+                style="width: 32px; height: 32px" /></a
+            ><a href="#" class="social"
+              ><img src="images/whatsapp.png" style="width: 32px; height: 32px"
+            /></a>
+          </div>
+        </div>
+
+        <div class="footerCol">
+          <h4>About Us</h4>
+          <ul>
+            <li><a href="#about">Our Story</a></li>
+            <li><a href="#about">Our Team</a></li>
+            <li><a href="#about">Mission</a></li>
+          </ul>
+        </div>
+
+        <div class="footerCol">
+          <h4>Important Links</h4>
+          <ul>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Terms of Services</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footerCol">
+          <h4>Contact Us</h4>
+          <ul>
+            <li>
+              <a href="mailto:bhup3sh.github@gmail.com"
+                >📧 bhup3sh.github@gmail.com</a
+              >
+            </li>
+            <li><a href="tel:+919876543210">📞 +91 98765 43210</a></li>
+            <li><a href="#">📍 42 Clean Street, Mumbai</a></li>
+            <li><a href="#">🕐 Mon-Sat: 8 AM - 8 PM</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footerBot">
+        <p>© 2026 CleanCo. All Rights Reserved</p>
+        <p>Made with ♥</p>
+      </div>
+    </footer>
+  </body>
+</html>
